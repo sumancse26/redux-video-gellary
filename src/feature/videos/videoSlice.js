@@ -4,7 +4,7 @@ import { getVideos } from '../../apiCalling/videoApi';
 const initialState = {
 	isLoading: false,
 	isError: false,
-	error: false,
+	error: '',
 	videos: []
 };
 
@@ -14,6 +14,7 @@ export const fetchVideos = createAsyncThunk('videos/fetchVideos', async () => {
 	return videos;
 });
 
+//creating video slice
 const videoSlice = createSlice({
 	name: 'videos',
 	initialState,
@@ -21,6 +22,7 @@ const videoSlice = createSlice({
 		builder
 			.addCase(fetchVideos.pending, (state) => {
 				state.isError = false;
+				state.error = '';
 				state.isLoading = true;
 				state.videos = [];
 			})

@@ -6,9 +6,15 @@ export const getVideos = async () => {
 
 	return res.data;
 };
-//call teg api
+//call tag api
 export const getAllTags = async () => {
 	const res = await axios.get('http://localhost:9000/tags');
+
+	return res.data;
+};
+//call single video api
+export const getSingleVideo = async (id) => {
+	const res = await axios.get(`http://localhost:9000/videos/${id}`);
 
 	return res.data;
 };

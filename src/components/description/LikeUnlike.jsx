@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
+import { useSelector } from 'react-redux';
 import likeImage from '../../assets/like.svg';
 import unlikeImage from '../../assets/unlike.svg';
+const LikeUnlike = () => {
+	const { video } = useSelector((state) => state.video);
+	const { likes, unlikes } = video;
 
-const LikeUnlike = ({ likesUnlike }) => {
-	const { likes, unlikes } = likesUnlike;
 	return (
 		<div className="flex gap-10 w-48">
 			<div className="flex gap-1">

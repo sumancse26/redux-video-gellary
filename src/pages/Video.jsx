@@ -8,6 +8,7 @@ import { fetchVideo } from '../feature/video/singleVideoSlice';
 
 const Video = () => {
 	const { video } = useSelector((state) => state.video);
+	const { tags } = video;
 	const { id } = useParams();
 	const dispatch = useDispatch();
 
@@ -24,7 +25,7 @@ const Video = () => {
 						<VideoDescription videoDescription={video} />
 					</div>
 
-					<RelatedVideo />
+					<RelatedVideo id={id} tags={tags} />
 				</div>
 			</div>
 		</section>

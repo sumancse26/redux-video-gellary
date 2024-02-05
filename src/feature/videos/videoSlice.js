@@ -9,8 +9,8 @@ const initialState = {
 };
 
 //creating thunk
-export const fetchVideos = createAsyncThunk('videos/fetchVideos', async (id) => {
-	const videos = await getVideos(id);
+export const fetchVideos = createAsyncThunk('videos/fetchVideos', async ({tags, search}) => {
+	const videos = await getVideos({tags, search});
 	return videos;
 });
 

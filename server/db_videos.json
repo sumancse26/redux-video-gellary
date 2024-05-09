@@ -11,7 +11,7 @@
 			"views": "2.1k",
 			"link": "https://www.youtube.com/embed/DWgZLSQyvSk?list=PLbGui_ZYuhiiaWMoOK7LXB0GeLsYCiyz5",
 			"thumbnail": "https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2021/11/php-8-2.webp",
-			"tags": ["javascript", "react", "tips"],
+			"tags": ["php", "tips"],
 			"likes": 0,
 			"unlikes": 0
 		},
@@ -146,6 +146,10 @@
 		{
 			"id": 10,
 			"title": "router"
+		},
+		{
+			"id": 10,
+			"title": "php"
 		}
 	]
 }

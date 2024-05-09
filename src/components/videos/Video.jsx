@@ -13,6 +13,7 @@ const Video = () => {
 		dispatch(fetchVideos({ tags, search }));
 	}, [dispatch, search, tags]);
 	console.log('isLoading', isLoading);
+	console.log('tags', tags);
 	console.log('error', error);
 	console.log('videos', videos);
 

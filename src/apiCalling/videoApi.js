@@ -13,13 +13,13 @@ export const getVideos = async ({tags, search}) => {
         queryString += `&q=${search}`
     }
 
-	const res = await axios.get(`http://localhost:9000/videos?${queryString}`);
+	const res = await axios.get(`https://json-server-sigma-eight.vercel.app/videos/?${queryString}`);
 
 	return res.data;
 };
 //call tag api
 export const getAllTags = async () => {
-	const res = await axios.get('http://localhost:9000/tags');
+	const res = await axios.get('https://json-server-sigma-eight.vercel.app/tags');
 
 	return res.data;
 };
@@ -29,14 +29,14 @@ export const getRelatedVideo = async (id, tags) => {
     let queryString = tags?.length > 0 ? tags.map(tag => 
         `tags_like=${tag}`
     ).join('&') + `&id_ne=${id}&_limit=${limit}` : `id_ne=${id}&_limit=${limit}`
-	const res = await axios.get(`http://localhost:9000/videos?${queryString}`);
+	const res = await axios.get(`https://json-server-sigma-eight.vercel.app/videos?${queryString}`);
 
 	return res.data;
 };
 //call single video api
-export const  getSingleVideo = async (id) => {
+export const  getSingleVideo = async () => {
 
-	const res = await axios.get(`http://localhost:9000/videos/${id}`);
+	const res = await axios.get(`https://json-server-sigma-eight.vercel.app/videos/1`);
 
 	return res.data;
 };

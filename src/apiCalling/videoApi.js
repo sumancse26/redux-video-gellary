@@ -5,7 +5,7 @@ export const getVideos = async ({tags, search}) => {
     let queryString =  "";
     if(tags?.length > 0){
         queryString += tags.map(tag => 
-            `tags_like=${tag}`
+            `tags_like=${tag.title}`
         ).join('&');
     }
 
@@ -34,9 +34,9 @@ export const getRelatedVideo = async (id, tags) => {
 	return res.data;
 };
 //call single video api
-export const  getSingleVideo = async () => {
+export const  getSingleVideo = async (id) => {
 
-	const res = await axios.get(`https://json-server-sigma-eight.vercel.app/videos/1`);
+	const res = await axios.get(`https://json-server-sigma-eight.vercel.app/videos/${id}`);
 
 	return res.data;
 };
